@@ -1,0 +1,82 @@
+<div class="parentDiv">
+  <div id="AH_Header">
+  <h3>Search Questions!</h3>
+  </div>
+
+  <div id="AH_WrappingDiv">
+    <form class="searchFieldForm">
+      <mat-form-field class="inputField">
+        <mat-label>Search Field</mat-label>
+        <input matInput placeholder="Query" name="q" [(ngModel)]="query.q">
+      </mat-form-field>
+
+      <mat-form-field class="inputField">
+        <mat-label>Page No</mat-label>
+        <input type="number" matInput placeholder="Page No" name="page" [(ngModel)]="query.page">
+      </mat-form-field>
+
+      <mat-form-field class="inputField">
+        <mat-label>Page Size</mat-label>
+        <input type="number" matInput placeholder="Page Size" name="pagesize" [(ngModel)]="query.pagesize">
+      </mat-form-field>
+
+      <mat-form-field class="inputField">
+        <mat-label>Closed</mat-label>
+          <select matNativeControl name="closed" [(ngModel)]="query.closed">
+              <option value="">--SELECT--</option>
+              <option value="True">True</option>
+              <option value="False">False</option>
+          </select>
+      </mat-form-field>
+
+      <mat-form-field class="inputField">
+        <mat-label>Sort By</mat-label>
+          <select matNativeControl name="sort" [(ngModel)]="query.sort">
+              <option value="">--SELECT--</option>
+              <option value="activity">Activity</option>
+              <option value="votes">Votes</option>
+              <option value="creation">Creation</option>
+              <option value="relevance">Relevance</option>
+          </select>
+      </mat-form-field>
+
+      <mat-form-field class="inputField">
+        <mat-label>Order</mat-label>
+          <select matNativeControl name="order" [(ngModel)]="query.order">
+              <option value="">--SELECT--</option>
+              <option value="asc">Ascending</option>
+              <option value="desc">Descending</option>
+          </select>
+      </mat-form-field>
+
+      <button (click)='search()' type='button' mat-raised-button color="primary">Search</button>
+    </form>
+
+    <table id="AH_ResultsTable">
+      <tr>
+        <th>Question ID</th>
+        <th>Title</th>
+        <th>Asked By</th>
+        <th>Total Answers</th>
+        <th>View Count</th>
+        <th>Asked On</th>
+      </tr>
+
+      <tr *ngFor="let row of data" class="AH_ResultRow">
+        <td class="AH_ResultTD">{{ row.question_id }}</td>
+        <td class="AH_ResultTD"><a href="/detail/{{ row.question_id }}">{{ row.title }}</a></td>
+        <td class="AH_ResultTD">
+          <div>
+            <img src="{{ row.owner.profile_image }}">
+          </div>
+          <span>
+            {{ row.owner.display_name  }}
+          </span>
+        </td>
+        <td class="AH_ResultTD">{{ row.answer_count }}</td>
+        <td class="AH_ResultTD">{{ row.view_count }}</td>
+        <td class="AH_ResultTD">{{ row.creation_date * 1000 | date }}</td>
+      </tr>
+    </table>
+  </div>
+</div>

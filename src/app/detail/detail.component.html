@@ -1,0 +1,23 @@
+<div id="AH_QuestionDetails">
+    <div style="text-align:center">
+        <span id="AH_QuestionText">
+            {{ questionDetails.title }}
+        </span>
+    </div>
+    <p>Asked By: {{ questionDetails.owner.display_name }}</p>
+    <img src="{{ questionDetails.owner.profile_image }}">
+    <p>Tags: {{ questionDetails.tags }}</p>
+    <p>Total Views: {{ questionDetails.view_count }}
+</div>
+
+
+<div *ngFor="let answer of answers" class="AH_AnswerDetails">
+    <div style="text-align:center">
+        <span id="AH_QuestionText">
+            Answer Id: {{ answer.answer_id }}
+        </span>
+    </div>
+    <p>Answerd By: {{ answer.owner.display_name }}</p>
+    <img src="{{ answer.owner.profile_image }}">
+</div>
+

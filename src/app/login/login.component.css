@@ -1,0 +1,13 @@
+.loginForm {
+    margin-left: 400px;
+    margin-top: 150px;
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    padding: 50px;
+    background-color: blanchedalmond;
+}
+
+.inputField {
+    width: 100%;
+}

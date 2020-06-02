@@ -1,0 +1,42 @@
+.inputField{
+    margin-left: 15px;
+    margin-top: 20px;
+}
+
+.searchFieldForm{
+    margin-top:20px;
+    background:#eee;
+    display: inline-block;    
+    padding: 15px;
+    border-radius: 20px;
+}
+
+#AH_ResultsTable{
+    margin-top:50px;
+    width: 100%;
+}
+
+#AH_Header{
+    margin-top:50px;
+    width: 100%;
+}
+
+.AH_ResultRow{
+    background-color: #d6b0b0;
+    border-radius: 5px;
+    margin-top:15px;
+    padding:5px;
+}
+
+.AH_ResultTD{
+    border-radius: 5px;
+    margin-top:50px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    max-width: 250px;
+}
+
+img{
+    width:100px;
+    height:100px;
+}
